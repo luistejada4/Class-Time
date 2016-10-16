@@ -20,6 +20,7 @@ public class Time {
         segundos = ((h <= 59) ? s:0);
         ActionListener taskPerformer = new ActionListener() {
         
+            @Override
             public void actionPerformed(ActionEvent evt) {
                 
                 if(segundos < 60)
@@ -67,5 +68,10 @@ public class Time {
     public String format12()
     {
         return String.format("%02d:%02d:%02d %s", hora-12, minutos, segundos, (hora >= 12 ? "PM":"AM"));
+    }
+    @Override
+    public String toString() 
+    {
+        return "Hora: "+hora+" minutos: "+minutos+" segundos: "+ segundos;
     }
 }
